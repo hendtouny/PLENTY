@@ -1,7 +1,10 @@
 /Cart.class
 /NormalUser.class
 /Product.class
+/ProductController.class
 /Store.class
 /StoreOwner.class
 /User.class
-/ProductController.class
+/ProductContoller.class
+/BrandController.class
+/VoucherController.class
