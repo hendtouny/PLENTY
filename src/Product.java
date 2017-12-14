@@ -1,6 +1,4 @@
-
-
-import java.util.*;
+import java.util.Vector;
 
 /**
  * 
@@ -42,15 +40,17 @@ public class Product {
      * 
      */
     private int ID;
-
+    
     /**
      * 
      */
-    public ArrayList<Store> stores;
-
-
-
-
+    private int Views;
+    
+    /**
+     * 
+     */
+    public Vector<Store> stores;
+    public Vector<Double> prices;
 
 
 
