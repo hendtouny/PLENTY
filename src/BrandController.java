@@ -1,12 +1,9 @@
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class BrandController {
+			
 	
-	public static ArrayList<Brand> Brands; 			// load all Brands on the platform
-	public static ArrayList<Brand> Brands_Sugg;		// load all Brands Suggestions
-		
-	
-	public static Boolean CheckExist (Brand br, ArrayList<Brand> brs) {
+	public static Boolean CheckExist (Brand br, Vector<Brand> brs) {
 		for(int i=0;i<brs.size();i++) {
 			if(br.getID()==brs.get(i).getID())
 				return true;
@@ -14,8 +11,8 @@ public class BrandController {
 		return false;
 	}	
 	public static Boolean AddBrand (Brand br){
-		if(CheckExist(br, Brands)==false) {
-			Brands.add(br);
+		if(CheckExist(br, Main.Main.Brands)==false) {
+			Main.Brands.add(br);
 			System.out.println("The Brand '"+br.getName()+"' has been Succesfully Added to the Platform");
 			return true;           
 		}
@@ -23,8 +20,8 @@ public class BrandController {
 		return false;
 	}
 	public static Boolean DeleteBrand (Brand br) {
-		if(CheckExist(br, Brands)==true) {
-			Brands.remove(br);
+		if(CheckExist(br, Main.Brands)==true) {
+			Main.Brands.remove(br);
 			System.out.println("The Brand "+br.getName()+" has been Succesfully Deleted from the Platform");
 			return true;           
 		}
@@ -32,8 +29,8 @@ public class BrandController {
 		return false;
 	}
 	public static Boolean RejectBrand (Brand br) {
-		if(CheckExist(br, Brands_Sugg)==true) {
-			Brands_Sugg.remove(br);
+		if(CheckExist(br, Main.Brands_Sugg)==true) {
+			Main.Brands_Sugg.remove(br);
 			System.out.println("The Brand Suggestion '"+br.getName()+"' has been Succesfully Rejcected");
 			return true;
 		}
@@ -41,9 +38,9 @@ public class BrandController {
 		return false;
 	}
 	public static Boolean ApproveBrand (Brand br) {
-		if(CheckExist(br, Brands_Sugg)==true) {
-			Brands_Sugg.remove(br);
-			Brands.add(br);
+		if(CheckExist(br, Main.Brands_Sugg)==true) {
+			Main.Brands_Sugg.remove(br);
+			Main.Brands.add(br);
 			System.out.println("The Brand Suggestion '"+br.getName()+"' has been Succesfully Approved");
 			return true;
 		}
